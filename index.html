@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Pattern Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Binary Pattern Viewer</h1>
+        </header>
+        
+        <div class="toolbar">
+            <div class="tool-group">
+                <button id="newPattern" title="New Pattern"><i class="fas fa-file"></i></button>
+                <button id="savePattern" title="Save Pattern"><i class="fas fa-save"></i></button>
+                <button id="loadPattern" title="Load Pattern"><i class="fas fa-folder-open"></i></button>
+                <input type="file" id="fileInput" accept=".json" style="display: none;">
+            </div>
+            
+            <div class="tool-group">
+                <button id="clearPattern" title="Clear Pattern"><i class="fas fa-trash-alt"></i></button>
+                <button id="invertPattern" title="Invert Pattern"><i class="fas fa-exchange-alt"></i></button>
+                <button id="rotatePattern" title="Rotate Pattern"><i class="fas fa-sync"></i></button>
+            </div>
+            
+            <div class="tool-group">
+                <label for="patternSize">Pattern Size:</label>
+                <input type="number" id="patternWidth" min="1" max="50" value="10" title="Width">
+                <span>×</span>
+                <input type="number" id="patternHeight" min="1" max="50" value="10" title="Height">
+                <button id="resizePattern" title="Resize Pattern"><i class="fas fa-expand"></i></button>
+            </div>
+            
+            <div class="tool-group">
+                <label for="cellSize">Cell Size:</label>
+                <input type="range" id="cellSize" min="5" max="50" value="30">
+                <span id="cellSizeValue">30px</span>
+            </div>
+            
+            <div class="tool-group">
+                <label>Colors:</label>
+                <input type="color" id="onColor" value="#000000" title="ON Color">
+                <input type="color" id="offColor" value="#ffffff" title="OFF Color">
+                <input type="color" id="gridColor" value="#cccccc" title="Grid Color">
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="pattern-container">
+                <div id="patternGrid" class="pattern-grid"></div>
+            </div>
+            
+            <div class="side-panel">
+                <div class="panel-section">
+                    <h3>Pattern Code</h3>
+                    <textarea id="patternCode" rows="10" spellcheck="false"></textarea>
+                    <button id="updateFromCode">Update</button>
+                </div>
+                
+                <div class="panel-section">
+                    <h3>Operations</h3>
+                    <button id="exportPNG">Export as PNG</button>
+                    <button id="exportSVG">Export as SVG</button>
+                    <button id="copyPattern">Copy as JSON</button>
+                </div>
+                
+                <div class="panel-section">
+                    <h3>Presets</h3>
+                    <div class="preset-buttons">
+                        <button data-preset="smiley">Smiley</button>
+                        <button data-preset="heart">Heart</button>
+                        <button data-preset="checkerboard">Checkerboard</button>
+                        <button data-preset="random">Random</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="notification" class="notification"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
