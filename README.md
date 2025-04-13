@@ -12,6 +12,9 @@
 
 <p align="center">Tool to View Binary Patterns with Scaling, Loading, Exporting & Presets</p>
 
+<img src="https://github.com/user-attachments/assets/ede0e384-6609-4994-aea4-1318fdeffe58">
+
+
 ## Features
 
 - **Interactive Grid Editor**: Click to toggle cells between binary 0 and 1 states
